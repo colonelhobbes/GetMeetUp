@@ -218,7 +218,7 @@ function createMarker(latlng, label, html) {
     else if(numberofaddresses > 2){
     var submit = "("+geolatreal+","+geolongreal+")";
     alert("hi")
-    window.location.href = "processing.php?loc=" + submit;
+    window.location.href = "processing.html?loc=" + submit;
     }
 
     if(numberofaddresses <2){
@@ -319,7 +319,7 @@ var totalTime = 0;
       var percentage = 50;
       var distance = (percentage/100) * totalDist;
       var routeMid = polyline.GetPointAtDistance(distance);
-      window.location.href = "processing.php?loc=" + routeMid;
+      window.location.href = "processing.html?loc=" + routeMid;
 
       totalDist = totalDist / 1000.
       }

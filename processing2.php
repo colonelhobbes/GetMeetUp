@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -100,6 +99,18 @@ var addresses = <?php echo json_encode($addresses); ?>;
 var placelat = <?php echo json_encode($placelat); ?>;
 var placelng = <?php echo json_encode($placelng); ?>;
 var MethodofTravel = <?php echo json_encode($MethodofTravel); ?>;
+if(MethodofTravel == "DRIVING"){
+      var travelMode = google.maps.DirectionsTravelMode.DRIVING;
+    }
+    if(MethodofTravel == "TRANSIT"){
+      var travelMode = google.maps.DirectionsTravelMode.TRANSIT;
+    }
+    if(MethodofTravel == "WALKING"){
+      var travelMode = google.maps.DirectionsTravelMode.WALKING;
+    }
+    if(MethodofTravel == "BICYCLING"){
+      var travelMode = google.maps.DirectionsTravelMode.BICYCLING;
+    }
 
 var keyword = <?php echo json_encode($keyword); ?>;
 var points = "Point ";
@@ -150,18 +161,7 @@ function callback(results, status) {
   }
   
   
-  if(MethodofTravel == "DRIVING"){
-      var travelMode = google.maps.DirectionsTravelMode.DRIVING;
-    }
-    if(MethodofTravel == "TRANSIT"){
-      var travelMode = google.maps.DirectionsTravelMode.TRANSIT;
-    }
-    if(MethodofTravel == "WALKING"){
-      var travelMode = google.maps.DirectionsTravelMode.WALKING;
-    }
-    if(MethodofTravel == "BICYCLING"){
-      var travelMode = google.maps.DirectionsTravelMode.BICYCLING;
-    }
+  
  
   var DistanceMatrixService = new google.maps.DistanceMatrixService();
   DistanceMatrixService.getDistanceMatrix(
@@ -387,7 +387,7 @@ function createMarker(place){
   
 
 
-function calcRoute(lat, loc) {
+function calcRoute(lat, loc, travelMode) {
   
   var start = document.getElementById('selectNumber').value;
   if(start == "Change Address"){
@@ -398,7 +398,7 @@ function calcRoute(lat, loc) {
   var request = {
     origin:start,
     destination:end,
-    travelMode: google.maps.TravelMode.DRIVING
+    travelMode: travelMode
   };
   directionsService.route(request, function(result, status) {
     if (status == google.maps.DirectionsStatus.OK) {
@@ -446,14 +446,14 @@ for(var i = 0; i < options.length; i++) {
 
 
 </head>
-<body onload="javascript:calcRoute(placelat,placelng);">
+<body onload="javascript:calcRoute(placelat,placelng, travelMode);">
 <a href="javascript:logout();">Logout</a>
 
 
 
 <div>
       
-      <select id="selectNumber" onchange="javascript:calcRoute(placelat,placelng);">
+      <select id="selectNumber" onchange="javascript:calcRoute(placelat,placelng,travelMode);">
         <option>Change Address</option>
       </select>
       
@@ -467,7 +467,3 @@ for(var i = 0; i < options.length; i++) {
 
 </body>
 </html>
-
-
-
-  

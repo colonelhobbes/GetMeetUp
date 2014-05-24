@@ -49,6 +49,7 @@ $latitudes = $_SESSION['locationslat'];
 $longitudes = $_SESSION['locationslong'];
 $keyword = $_SESSION['keyword'];
 $addresses = $_SESSION['addresses'];
+$MethodofTravel = $_SESSION['MethodofTravel'];
 
 $_SESSION['allowed_access'] = false;
 ?>
@@ -98,7 +99,7 @@ var addresses = <?php echo json_encode($addresses); ?>;
 
 var placelat = <?php echo json_encode($placelat); ?>;
 var placelng = <?php echo json_encode($placelng); ?>;
-
+var MethodofTravel = <?php echo json_encode($MethodofTravel); ?>;
 
 var keyword = <?php echo json_encode($keyword); ?>;
 var points = "Point ";
@@ -148,13 +149,26 @@ function callback(results, status) {
     }
   }
   
+  
+  if(MethodofTravel == "DRIVING"){
+      var travelMode = google.maps.DirectionsTravelMode.DRIVING;
+    }
+    if(MethodofTravel == "TRANSIT"){
+      var travelMode = google.maps.DirectionsTravelMode.TRANSIT;
+    }
+    if(MethodofTravel == "WALKING"){
+      var travelMode = google.maps.DirectionsTravelMode.WALKING;
+    }
+    if(MethodofTravel == "BICYCLING"){
+      var travelMode = google.maps.DirectionsTravelMode.BICYCLING;
+    }
  
   var DistanceMatrixService = new google.maps.DistanceMatrixService();
   DistanceMatrixService.getDistanceMatrix(
     {
       origins: [startLoc],
       destinations: destArray,
-      travelMode: google.maps.TravelMode.DRIVING,
+      travelMode: travelMode,
       unitSystem: google.maps.UnitSystem.IMPERIAL,
       avoidHighways: false,
       avoidTolls: false,

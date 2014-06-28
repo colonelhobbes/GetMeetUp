@@ -1,30 +1,23 @@
-
 <!DOCTYPE html>
 <html>
 <head>
+</head>
 <script src="pace.js"></script>
-  <link href="loadingbar2.css" rel="stylesheet" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>GetMeetUp v1.0</title>
+<script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
+<script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.3.0/firebase-simple-login.js'></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link href="loadingbar2.css" rel="stylesheet" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>GetMeetUp v1.0</title>
 
   <?php
   session_start();
   $_SESSION['allowed_access'] = true;
   ?>
+
   
-  <script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>
-  
-  
-  
-  
-  
-  <style type='text/css'>
-    
-  </style>
-  
-  <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
-  <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.3.0/firebase-simple-login.js'></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script type="text/javascript">
 
 var firebaseRef = new Firebase("https://intense-fire-9670.firebaseio.com/");
@@ -87,11 +80,9 @@ $(document).ready(function(){
 </script>
 
 
-</head>
+
 <body>
-<script>
-document.write("Welcome" + user.displayName);
-</script>
+
 
 <div class = "main">
 <p><a href="javascript:logout();">Logout</a></p>

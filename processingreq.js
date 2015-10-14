@@ -1,9 +1,4 @@
-function logout() {
-  auth.logout();
-  window.location.href = "login.php";
-    
-  }
-      
+
     
 
 

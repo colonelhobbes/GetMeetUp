@@ -248,7 +248,9 @@ function createMarker(latlng, label, html) {
     }
     else if(numberofaddresses > 2 && ifwater == "c0c0f0"){
      alert("Calculations and results could not be preformed because the locations entered yeilded a midpoint over a body of water. Redirecting to input page.")
-     window.location.href = "index.php";
+     var submit = "("+geolatreal+","+geolongreal+")";
+    //alert("hi")
+    window.location.href = "processing2.php?loc=" + submit;
     }
 
     else if(numberofaddresses > 2){
@@ -259,11 +261,11 @@ function createMarker(latlng, label, html) {
 
     if(numberofaddresses <2){
       alert("Only one address has been submitted. Redirecting to input page.")
-      window.location.href = "index.php";
+      window.location.href = "loggedin.php";
     }
     if(keyword == ""){
       alert("No search keyword was entered. Redirecting to input page.")
-      window.location.href = "index.php";
+      window.location.href = "loggedin.php";
     }
     
   }

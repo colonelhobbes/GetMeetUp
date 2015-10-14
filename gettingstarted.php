@@ -7,7 +7,6 @@
                 <link href = "css/styles.css" rel = "stylesheet">
                 <link rel="stylesheet" href="/css/font-awesome.min.css">
                 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-                <link href="http://getbootstrap.com/examples/carousel/carousel.css" rel="stylesheet">
         </head>
         <style type="text/css">
         .input-group[class*="col-"] {
@@ -23,15 +22,23 @@
 		.popover.right .arrow:after {
 		    border-right-color: #e74c3c;
 		}
-        body
-{
-    margin:0px;
-    padding:0px;
-    background-color:#eee;
+
+        span.step {
+  background: #cccccc;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.6em; 
 }
 
         </style>
-        <body class="body">
+        <body>
 
 
         <div id = "main" class="main" style='display:none'>
@@ -51,8 +58,8 @@
                                
                                         <ul class = "nav navbar-nav navbar-right">
                                        
-                                                <li class = "active"><a href = "index.php">Home</a></li>
-                                                <li><a href = "gettingstarted.php">Get Started</a></li>
+                                                <li ><a href = "index.php">Home</a></li>
+                                                <li class = "active"><a href = "gettingstarted.php">Get Started</a></li>
                                                 
                                                 <li><a href = "#Contact" data-toggle="modal">Contact Us</a></li>
                                                 <li class = "dropdown">
@@ -78,99 +85,79 @@
                         </div>
                 </div>
                
+                <div class = "container">
+               
+                        <div class = "jumbotron">
+                                <center><h2>
+                                Getting started with GetMeetUp could not be easier. Simply follow the 3 steps below in order to find your perfect meeting place!</h2></center>
+                                
+                        </div>
+               
+                </div>
+               
+
+                   
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <center><span class="step">1</span><h3><a href = "#">Login Using one of Your Favorite Apps</a></h3>
+                            <p>To provide you with the best experience, GetMeetUp seamlessly works with your favorite social media websites in order to make login into our system quick and easy. We value our user's privacy, so we never store any of your personal information, usernames, or passwords - just the way it should be. </p>
+                                    <a href = "login.php" class = "btn btn-success">Login Now</a>
+                                    <br>
+                    <br>
+                    <br>
+                    </div>
+
+                    
+                        <img src="images/login.png" height="50%" width="50%">
+                   
+                    
+                        </div>
+                        </center>
+
+
+
+                        <div class="col-md-6">
+                            <center><span class="step">2</span><h3><a href = "#">Enter Some Information About the Place You Would Like to Find</a></h3>
+                            <p>Add just a couple words or a phrase to tell us what kind of place you want to meet up at. You can enter general terms like "coffee" or specific cafes you would love to try out. You can change the mode of transportation, and add as many starting locations as you like. The sky is the limit!</p>
+                                    <center><a href = "login.php" class = "btn btn-success">Get Started</a></center>
+                                    <br>
+                                    <br>
+                                    <br>
+                    </div>
+                        <img src="images/form.png" height="35%" width="50%">
+                    
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
                 
-               
-                            <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="images/8.jpg" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Find Meetups For Free!</h1>
-              <p>GetMeetUp is a tool which helps you and your friends find the most optimal meeting location, and the best part: it's free!</p>
-              <p><a id="l1a"class="btn btn-lg btn-primary" href = "#Login" data-toggle="modal" role="button">Get Started</a></p>
-              <p><a id="l1b"class="btn btn-lg btn-primary" href = "loggedin.php" data-toggle="modal" role="button">Get Started</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="images/11.png" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Hate Traffic?</h1>
-              <p>Not to worry. GetMeetUp sources the best traffic information and directions from Google Maps to make sure that you aren't stuck in gridlock.</p>
-              <p><a id="l2a"class="btn btn-lg btn-primary" href = "#Login" data-toggle="modal" role="button">Get Started</a></p>
-              <p><a id="l2b"class="btn btn-lg btn-primary" href = "loggedin.php" data-toggle="modal" role="button">Get Started</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="images/7.jpg" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Anywhere. Anytime.</h1>
-              <p>Sourcing places from powerful location databases like Google and Yelp, GetMeetUp will always find you the best place to meet up with your friends.</p>
-              <p><a id="l3a"class="btn btn-lg btn-primary" href = "#Login" data-toggle="modal" role="button">Get Started</a></p>
-              <p><a id="l3b"class="btn btn-lg btn-primary" href = "loggedin.php" data-toggle="modal" role="button">Get Started</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="images/9.jpg" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Never Get Lost Again!</h1>
-              <p>We give you directions so you won't ever struggle to find your way again.</p>
-              <p><a id="l4a"class="btn btn-lg btn-primary" href = "#Login" data-toggle="modal" role="button">Get Started</a></p>
-              <p><a id="l4b"class="btn btn-lg btn-primary" href = "loggedin.php" data-toggle="modal" role="button">Get Started</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
-               
-     
 
-    <div class="container marketing">
+                <div class="container">
+               <div class="col-md-6">
+                            <center><span class="step">3</span><h3><a href = "#">Use the Interactive Map to Navigate Results</a></h3>
+                            <p>The fully functional map populates with optimized meeting locations for you to choose from. Simply click on the blue marker, and then "Get Directions" to generate directions from each of your starting locations.</p>
+                                    <center><a href = "login.php" class = "btn btn-success">Give it a Try</a></center>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                    </div>
+                        <img src="images/results.png" height="50%" width="50%">
+                    
+                        </div>
+                    </div>
+                </div>
+                </div>
 
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/2.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>Just Two Addresses and a Keyword</h2>
-          <p>All you need to get started are two addresses and a search term. We do the rest.</p>
-          <p><a id="l5a"class="btn btn-default btn-primary" href = "#Login" data-toggle="modal" role="button">Learn More</a></p>
-          <p><a id="l5b"class="btn btn-default btn-primary" href = "loggedin.php" data-toggle="modal" role="button">Learn More</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/1.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>On All of Your Favorite Devices</h2>
-          <p>With a website designed to be used on the go, you can utilize the full power of GetMeetUp wherever, and whenever, you want to.</p>
-          <p><a id="l6a"class="btn btn-default btn-primary" href = "#Login" data-toggle="modal" role="button">Get Started</a></p>
-          <p><a id="l6b"class="btn btn-default btn-primary" href = "loggedin.php" data-toggle="modal" role="button">Get Started</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="images/3.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-          <h2>1000s of Places to Choose From</h2>
-          <p>With locations sourced from Google and Yelp, you will always find a place you love!</p>
-          <p><a id="l7a"class="btn btn-default btn-primary" href = "#Login" data-toggle="modal" role="button">Learn More</a></p>
-          <p><a id="l7b"class="btn btn-default btn-primary" href = "loggedin.php" data-toggle="modal" role="button">Learn More</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-      <br>
-      <br>
-               
+
                 <div class = "navbar navbar-default navbar-fixed-bottom">
                
                         <div class = "container">
@@ -238,7 +225,7 @@
 								    </div>
 								    <div class="form-group">
 								        <div class="col-md-6">
-								           <button type="submit" value="Submit" class="btn btn-custom pull-right" id="send_btn">Send</button>
+								           <center><button type="submit" value="Submit" class="btn btn-primary pull-right" id="send_btn">Send</button></center>
 								        </div>
 								    </div>
 							</form>
@@ -282,33 +269,18 @@ alert(error);
 // user authenticated with Firebase
 
 if($('#Login').hasClass('in')){
-    
-    window.location.href = "loggedin.php";
+    window.location.href = "index.php";
 }
+
 $('#loginno').hide();
-$('#l1a').hide();
-$('#l2a').hide();
-$('#l3a').hide();
-$('#l4a').hide();
-$('#l5a').hide();
-$('#l6a').hide();
-$('#l7a').hide();
 $('#loginyes').show();
 $('#main').fadeIn(1000);
-
 
 
 // Log out so we can log in again with a different provider.
 //auth.logout();
 } else {
 $('#loginyes').hide();
-$('#l1b').hide();
-$('#l2b').hide();
-$('#l3b').hide();
-$('#l4b').hide();
-$('#l5b').hide();
-$('#l6b').hide();
-$('#l7b').hide();
 $('#loginno').show();
 $('#main').fadeIn(1000);
 
@@ -317,14 +289,14 @@ $('#main').fadeIn(1000);
 }
 });
 
-
 function login(provider) {
-
-
 auth.login(provider);
 
+if($('#Login').hasClass('in')){
+    
+    $('#Login').modal('hide');
 
-
+}
 
 }
 
@@ -335,8 +307,6 @@ auth.logout();
 window.location.href = "index.php";
 
 } 
-
-
 
 
 

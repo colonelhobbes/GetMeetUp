@@ -3,6 +3,10 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <link href = "css/bootstrap.min.css" rel = "stylesheet">
+                <link href = "css/styles.css" rel = "stylesheet">
+                <link rel="stylesheet" href="/css/font-awesome.min.css">
+                <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 <style type="text/css">
 html, body {
           margin: 0;
@@ -10,17 +14,20 @@ html, body {
           height: 100%
       }
       #map_canvas {
+          top: -20px;
           margin: 0;
           padding: 0;
-          width: 50%;
-          height: 100%
+          width: 75%;
+          height: 100%;
       }
       #directionsPanel {
           position: absolute;
-          top: 0px;
+          top: 40px;
           right: 0px;
-          width: 50%;
-          height: 100%
+          width: 25%;
+          bottom: 200px;
+          height: 90%
+
       }
       #selectNumber {
         background: #fff;
@@ -65,7 +72,7 @@ require('processingreq.php');
       } else if (user) {
         // user authenticated with Firebase
 
-    
+        
 
         // Log out so we can log in again with a different provider.
         //auth.logout();
@@ -73,7 +80,11 @@ require('processingreq.php');
         window.location.href = "login.php";
       }
     });
+function logout() {
+auth.logout();
+window.location.href = "index.php";
 
+} 
 
 var listcount = <?php echo json_encode(count($latitudes)); ?>;
 var center = <?php echo json_encode($center); ?>;
@@ -87,6 +98,7 @@ var addresses = <?php echo json_encode($addresses); ?>;
 
 var placelat = <?php echo json_encode($placelat); ?>;
 var placelng = <?php echo json_encode($placelng); ?>;
+
 var MethodofTravel = <?php echo json_encode($MethodofTravel); ?>;
 if(MethodofTravel == "DRIVING"){
       var travelMode = google.maps.DirectionsTravelMode.DRIVING;
@@ -142,7 +154,48 @@ for(var i = 0; i < options.length; i++) {
 
 </head>
 <body onload="javascript:calcRoute(placelat,placelng, travelMode);">
-<a href="javascript:logout();">Logout</a>
+<div class = "navbar navbar-inverse navbar-static-top">
+                        <div class = "container">
+                               
+                                <a href = "loggedin.php" class = "navbar-brand">GetMeetUp</a>
+                               
+                                <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                                        <span class = "icon-bar"></span>
+                                        <span class = "icon-bar"></span>
+                                        <span class = "icon-bar"></span>
+                                </button>
+                               
+                                <div class = "collapse navbar-collapse navHeaderCollapse">
+                               
+                                        <ul class = "nav navbar-nav navbar-right">
+                                       
+                                                <li class = "active"><a href = "index.php">Home</a></li>
+                                                <li><a href = "gettingstarted.php">Get Started</a></li>
+                                                
+                                                <li><a href = "#Contact" data-toggle="modal">Contact Us</a></li>
+                                                <li class = "dropdown">
+                                                       
+                                                        <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">Social Media <b class = "caret"></b></a>
+                                                        <ul class = "dropdown-menu">
+                                                                <li><a href = "#">Twitter</a></li>
+                                                                <li><a href = "#">Facebook</a></li>
+                                                                <li><a href = "#">Google+</a></li>
+                                                                
+                                                        </ul>
+                                               
+                                                </li>
+                                                <li><a href = "about.php">About</a></li>
+                                                
+                                                <li id = "loginyes"><a href = "javascript:logout();">Logout</a></li>
+
+                                       
+                                        </ul>
+                               
+                                </div>
+                               
+                        </div>
+                </div>
+                
 
 <div>
       
@@ -153,7 +206,21 @@ for(var i = 0; i < options.length; i++) {
     </div>
 
 <div id="map_canvas"></div>
-<div id="directionsPanel"></div>
+
+<div id="directionsPanel" style="overflow-y: scroll"></div>
+
+
+
+<div class = "navbar navbar-default navbar-fixed-bottom">
+               
+                        <div class = "container">
+                                <p class = "navbar-text pull-left">Built By Arun Kalyanaraman</p>
+                                <a href="https://twitter.com/share" class="twitter-share-button navbar-text pull-right" data-url="http://getmeetup.com" data-text="Wanna meetup with me? Try GetMeetUp.com now." data-size="large" data-hashtags="GetMeetUp">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        </div>
+               
+                </div>
+
 
 </body>
 </html>

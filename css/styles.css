@@ -1,0 +1,30 @@
+.input-group[class*="col-"] {
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+
+.popover   {
+    background-color: #e74c3c;
+    color: #ecf0f1;
+    width: 120px;
+}
+.popover.right .arrow:after {
+    border-right-color: #e74c3c;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+    
+    font: 32px Arial, sans-serif;
+}
+
